@@ -176,7 +176,8 @@ fi # if [ "$TRAVIS_COMMIT" != "$tag_sha" ]
 
 if [ -z "$release_url" ] ; then
 	echo "Cannot figure out the release URL for $RELEASE_NAME"
-	exit 1
+	echo "That's annoying, but let's not fail the Travis build for it."
+	exit 0
 fi
 
 echo "Upload binaries to the release..."
